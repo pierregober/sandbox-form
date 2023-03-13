@@ -16,31 +16,99 @@ function App() {
   });
 
   const onSubmit = (data) => {
-    alert(JSON.stringify(data));
     axios.post("/register", data).then((res) => {
       console.log(res);
     });
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div>
-        <label>Name</label>
-        <input type="text" {...register("name")} />
-        {errors?.name && <p>{errors?.name?.message}</p>}
-      </div>
-      <div style={{ marginBottom: 10 }}>
-        <label>Email</label>
-        <input type="email" {...register("email")} />
-        {errors?.email && <p>{errors?.email?.message}</p>}
-      </div>
-      <div style={{ marginBottom: 10 }}>
-        <label>Password</label>
-        <input type="password" {...register("password")} />
-        {errors?.password && <p>{errors?.password?.message}</p>}
-      </div>
-      <input type="submit" />
-    </form>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <h1>Register</h1>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "250px",
+          }}
+        >
+          <label>Name</label>
+          <input type="text" {...register("name")} />
+          {errors?.name && <p>{errors?.name?.message}</p>}
+        </div>
+        <div
+          style={{
+            marginBottom: 10,
+            display: "flex",
+            flexDirection: "column",
+            width: "250px",
+          }}
+        >
+          <label>Email</label>
+          <input type="email" {...register("email")} />
+          {errors?.email && <p>{errors?.email?.message}</p>}
+        </div>
+        <div
+          style={{
+            marginBottom: 10,
+            display: "flex",
+            flexDirection: "column",
+            width: "250px",
+          }}
+        >
+          <label>Password</label>
+          <input type="password" {...register("password")} />
+          {errors?.password && <p>{errors?.password?.message}</p>}
+        </div>
+        <input type="submit" />
+      </form>
+      <h1>Login</h1>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "250px",
+          }}
+        >
+          <label>Name</label>
+          <input type="text" {...register("name")} />
+          {errors?.name && <p>{errors?.name?.message}</p>}
+        </div>
+        <div
+          style={{
+            marginBottom: 10,
+            display: "flex",
+            flexDirection: "column",
+            width: "250px",
+          }}
+        >
+          <label>Email</label>
+          <input type="email" {...register("email")} />
+          {errors?.email && <p>{errors?.email?.message}</p>}
+        </div>
+        <div
+          style={{
+            marginBottom: 10,
+            display: "flex",
+            flexDirection: "column",
+            width: "250px",
+          }}
+        >
+          <label>Password</label>
+          <input type="password" {...register("password")} />
+          {errors?.password && <p>{errors?.password?.message}</p>}
+        </div>
+        <input type="submit" />
+      </form>
+    </div>
   );
 }
 
