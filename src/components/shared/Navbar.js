@@ -9,8 +9,6 @@ function Navbar() {
     >
       <a href="/">Register</a>
       <a href="/login">Login</a>
-      <a href="/get">Profile</a>
-      <a href="/update">Update Profile</a>
     </div>
   );
 }
