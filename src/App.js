@@ -15,10 +15,26 @@ function App() {
     resolver: yupResolver(SignupSchema),
   });
 
-  const onSubmit = (data) => {
-    axios.post("/register", data).then((res) => {
-      console.log(res);
-    });
+  const onRegisterHandler = (data) => {
+    axios
+      .post("/register", data)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const onLoginHandler = (data) => {
+    axios
+      .post("/login", data)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -31,7 +47,7 @@ function App() {
       }}
     >
       <h1>Register</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onRegisterHandler)}>
         <div
           style={{
             display: "flex",
@@ -70,7 +86,7 @@ function App() {
         <input type="submit" />
       </form>
       <h1>Login</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      {/* <form onSubmit={handleSubmit(onLoginHandler)}>
         <div
           style={{
             display: "flex",
@@ -107,7 +123,7 @@ function App() {
           {errors?.password && <p>{errors?.password?.message}</p>}
         </div>
         <input type="submit" />
-      </form>
+      </form> */}
     </div>
   );
 }
