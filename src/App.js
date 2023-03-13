@@ -26,16 +26,16 @@ function App() {
       });
   };
 
-  const onLoginHandler = (data) => {
-    axios
-      .post("/login", data)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  // const onLoginHandler = (data) => {
+  //   axios
+  //     .post("/login", data)
+  //     .then((res) => {
+  //       console.log(res);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   return (
     <div
